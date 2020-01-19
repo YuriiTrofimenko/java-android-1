@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HelloApp</string>
+    <string name="hello_android">Hello Android</string>
+    <string name="hello_android_2">Hello Android 2</string>
+    <string name="press_me">Press Me!</string>
+    <string name="press_me_2">Press Me 2!</string>
+</resources>
