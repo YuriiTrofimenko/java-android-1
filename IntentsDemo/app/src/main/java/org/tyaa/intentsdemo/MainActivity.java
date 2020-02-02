@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     public static final String USER_NAME_EXTRA = "org.tyaa.intentsdemo.MainActivity.USER_NAME_EXTRA";
+    public static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
     private String userName = "";
 
     @Override
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent =
                         new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra(USER_NAME_EXTRA, userName);
-                startActivityForResult(intent, 0);
+                startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
             }
         });
 
@@ -58,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             switch (requestCode){
-                case 0: {
+                case SECOND_ACTIVITY_REQUEST_CODE: {
                     if (data != null) {
-                        Toast.makeText(this, "Reply: " + data.getStringExtra("reply"), Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Reply: " + data.getStringExtra(SecondActivity.REPLY_EXTRA), Toast.LENGTH_LONG).show();
                     }
                 }
             }

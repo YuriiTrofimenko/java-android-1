@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
 
+    public static final String REPLY_EXTRA = "org.tyaa.intentsdemo.SecondActivity.REPLY_EXTRA";
     private String reply = "";
 
     @Override
@@ -41,7 +42,7 @@ public class SecondActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 reply = s.toString();
                 Intent intent = new Intent();
-                intent.putExtra("reply", reply);
+                intent.putExtra(REPLY_EXTRA, reply);
                 setResult(RESULT_OK, intent);
             }
         });
