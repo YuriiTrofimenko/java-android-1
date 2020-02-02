@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -41,9 +43,21 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 reply = s.toString();
-                Intent intent = new Intent();
-                intent.putExtra(REPLY_EXTRA, reply);
-                setResult(RESULT_OK, intent);
+                if (!reply.isEmpty()) {
+                    Intent intent = new Intent();
+                    intent.putExtra(REPLY_EXTRA, reply);
+                    setResult(RESULT_OK, intent);
+                } else {
+                    setResult(RESULT_CANCELED);
+                }
+            }
+        });
+
+        Button comeBackButton = findViewById(R.id.comeBackButton);
+        comeBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SecondActivity.this.finish();
             }
         });
     }

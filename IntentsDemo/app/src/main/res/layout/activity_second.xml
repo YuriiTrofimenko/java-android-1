@@ -13,7 +13,12 @@
         android:layout_height="wrap_content"></TextView>
     <EditText
         android:id="@+id/replyEditText"
-        android:hint="Your Reply"
+        android:hint="@string/your_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/comeBackButton"
+        android:text="@string/come_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

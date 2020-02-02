@@ -61,10 +61,12 @@ public class MainActivity extends AppCompatActivity {
             switch (requestCode){
                 case SECOND_ACTIVITY_REQUEST_CODE: {
                     if (data != null) {
-                        Toast.makeText(this, "Reply: " + data.getStringExtra(SecondActivity.REPLY_EXTRA), Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, getResources().getText(R.string.reply) + data.getStringExtra(SecondActivity.REPLY_EXTRA), Toast.LENGTH_LONG).show();
                     }
                 }
             }
+        } else {
+            Toast.makeText(this, "No data have returned", Toast.LENGTH_LONG).show();
         }
     }
 }

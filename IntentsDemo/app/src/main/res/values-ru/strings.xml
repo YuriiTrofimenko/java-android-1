@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Намерения Демо</string>
+    <string name="click_me">Кликни!</string>
+    <string name="your_reply">Ваш ответ</string>
+    <string name="come_back">Вернуться</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="reply">Ответ: </string>
+</resources>
