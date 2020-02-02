@@ -1,5 +1,6 @@
 package org.tyaa.intentsdemo;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent =
                         new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra(USER_NAME_EXTRA, userName);
-                startActivity(intent);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -49,5 +51,19 @@ public class MainActivity extends AppCompatActivity {
                 userName = s.toString();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode){
+                case 0: {
+                    if (data != null) {
+                        Toast.makeText(this, "Reply: " + data.getStringExtra("reply"), Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        }
     }
 }
