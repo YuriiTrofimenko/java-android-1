@@ -12,6 +12,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String USER_NAME_EXTRA = "org.tyaa.intentsdemo.MainActivity.USER_NAME_EXTRA";
     private String userName = "";
 
     @Override
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =
                         new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("userName", userName);
+                intent.putExtra(USER_NAME_EXTRA, userName);
                 startActivity(intent);
             }
         });

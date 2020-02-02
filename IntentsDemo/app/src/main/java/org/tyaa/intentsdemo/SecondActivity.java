@@ -12,7 +12,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         String userName =
-            getIntent().getStringExtra("userName");
+            getIntent().getStringExtra(MainActivity.USER_NAME_EXTRA);
         if (userName != null) {
             Toast.makeText(this, "Hello, " + userName, Toast.LENGTH_LONG).show();
         }
